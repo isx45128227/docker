@@ -1,7 +1,7 @@
 # Dockerfile
 # Docker net amb eines PAM 
 FROM fedora:24
-MAINTAINER @isx45128227 PAM Roger Ferran @edt Curs 2017-2018"
+MAINTAINER @isx45128227 "PAM Roger Ferran @edt Curs 2017-2018"
 RUN dnf -y update vi
 RUN dnf -y install vim iputils iproute procps mlocate \
 	tree nmap nss-pam-ldapd
