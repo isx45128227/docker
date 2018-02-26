@@ -1,3 +1,5 @@
+# Dockerfile
+# Docker net amb eines LDAP funcionant
 FROM fedora:24
 MAINTAINER @isx45128227 "LDAP Roger Ferran @edt Curs 2017-2018"
 RUN dnf -y update vi
