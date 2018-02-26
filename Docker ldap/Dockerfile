@@ -24,4 +24,4 @@ RUN slaptest -f /opt/docker/slapd-edt.org.conf -F /etc/openldap/slapd.d/ -u
 RUN slapadd -v -F /etc/openldap/slapd.d/ -l /opt/docker/organitzacio_edt.org-TOTAL.ldif
 
 RUN chown -R ldap.ldap /var/lib/ldap /etc/openldap/slapd.d/
-RUN /opt/docker/startup.sh
+CMD ["/opt/docker/startup.sh"]
