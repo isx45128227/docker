@@ -6,13 +6,12 @@ RUN dnf -y update vi
 RUN dnf -y install vim iputils iproute procps mlocate \
 	xinetd openldap openldap-servers openldap-clients tree nmap
 	
-RUN echo "Benvingut a host base"
-RUN mkdir /opt/docker && echo "opt creat"
+RUN mkdir /opt/docker
 RUN cp /usr/share/openldap-servers/DB_CONFIG.example /opt/docker/DB_CONFIG
 
-COPY slapd/slapd-edt.org.conf /opt/docker
-COPY slapd/organitzacio_edt.org-TOTAL.ldif /opt/docker
-COPY slapd/startup.sh /opt/docker
+COPY slapd/slapd-edt.org.conf /opt/docker/
+COPY slapd/organitzacio_edt.org-TOTAL.ldif /opt/docker/
+COPY slapd/startup.sh /opt/docker/
 RUN chmod +x /opt/docker/startup.sh
 
 RUN rm -rf /etc/openldap/slapd.d/* /var/lib/ldap/*
