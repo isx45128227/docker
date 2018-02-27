@@ -6,7 +6,6 @@ RUN dnf -y update vi
 RUN dnf -y install vim iputils iproute procps mlocate \
 	tree nmap nss-pam-ldapd
 	
-RUN echo "Benvingut a host PAM"
 RUN mkdir /opt/docker && echo "opt creat"
 
 RUN rm -rf /etc/nscd.conf
