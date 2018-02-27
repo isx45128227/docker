@@ -6,7 +6,7 @@ RUN dnf -y update vi
 RUN dnf -y install vim iputils iproute procps mlocate \
 	tree nmap nss-pam-ldapd
 	
-RUN mkdir /opt/docker && echo "opt creat"
+RUN mkdir /opt/docker
 
 RUN rm -rf /etc/nscd.conf
 RUN rm -rf /etc/nslcd.conf
@@ -16,7 +16,9 @@ COPY pam/nscd.conf /etc/
 COPY pam/nslcd.conf /etc/
 COPY pam/nsswitch.conf /etc/
 
-COPY pam/startup.sh /opt/docker
+COPY pam/startup.sh /opt/docker/
 RUN chmod +x /opt/docker/startup.sh
+WORKDIR /opt/docker/
 
-CMD ["/opt/docker/startup.sh"]
+CMD ["/bin/bash"]
+# Haurem d'iniciar el servei pam --> ./opt/docker/startup.sh
